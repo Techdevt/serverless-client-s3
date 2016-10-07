@@ -23,7 +23,7 @@ class Client {
         commands: {
           deploy: {
             usage: 'Deploy serverless client code',
-            lifecycleEvents:[
+            lifecycleEvents: [
               'deploy'
             ]
           }
@@ -33,6 +33,11 @@ class Client {
 
 
     this.hooks = {
+      'after:deploy:createDeploymentArtifacts': () => {
+        this._validateAndPrepare()
+          .then(this._processDeployment.bind(this));     
+      },
+
       'client:client': () => {
         this.serverless.cli.log(this.commands.client.usage);
       },
