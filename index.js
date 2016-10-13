@@ -33,10 +33,10 @@ class Client {
 
 
     this.hooks = {
-      'after:deploy:createDeploymentArtifacts': () => {
-        this._validateAndPrepare()
-          .then(this._processDeployment.bind(this));     
-      },
+//       'after:deploy:createDeploymentArtifacts': () => {
+//         this._validateAndPrepare()
+//           .then(this._processDeployment.bind(this));     
+//       },
 
       'client:client': () => {
         this.serverless.cli.log(this.commands.client.usage);
