@@ -6,7 +6,7 @@ const async        = require('async');
 const _            = require('lodash');
 const mime         = require('mime');
 const fs           = require('fs');
-const AWS = require('serverless/lib/plugins/aws');
+const AWS = require('serverless/lib/plugins/aws/provider/awsProvider');
 
 class Client {
   constructor(serverless, options){
